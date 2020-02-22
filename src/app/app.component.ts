@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ɵrenderComponent } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  template: `{{title}}`
 })
 export class AppComponent {
   title = 'ng-ivy-eldemo';
 }
+
+ɵrenderComponent(AppComponent);
