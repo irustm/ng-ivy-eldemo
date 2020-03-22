@@ -8,6 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "compress": "gzipper --verbose ./demo-instructions",
     "ngc": "ngc -p ./tsconfig.app.json",
     "bundle": "rollup -c rollup.config.js"
   },
@@ -27,6 +28,7 @@
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
+    "@ampproject/rollup-plugin-closure-compiler": "^0.24.0",
     "@angular-devkit/build-angular": "~0.900.1",
     "@angular/cli": "~9.0.1",
     "@angular/compiler-cli": "~9.0.0",

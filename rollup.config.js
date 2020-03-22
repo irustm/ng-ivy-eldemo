@@ -5,19 +5,22 @@ import nodeResolve from 'rollup-plugin-node-resolve';
 import paths from 'rollup-plugin-paths';
 import pathMapping from 'rxjs/_esm5/path-mapping';
 import uglify from 'rollup-plugin-uglify';
+import compiler from '@ampproject/rollup-plugin-closure-compiler';
 
 export default {
-  input: './out-tsc/app/src/app/app.component.js',
+  // input: './out-tsc/app/src/app/app.component.js',
+  input: './demo-instructions/index.js',
   output: {
     name: 'hw',
-    file: 'public/bundle.js',
+    // file: 'public/bundle.js',
+    file: './demo-instructions/bundle.js',
     format: 'iife',
     sourcemap: false
   },
   plugins: [
-    paths(pathMapping()),
-    nodeResolve({jsnext: true, module: true}),
-    optimizer({}),
+    // paths(pathMapping()),
+    // nodeResolve({jsnext: true, module: true}),
+    // optimizer({}),
     uglify({
       mangle: true,
       compress: {
@@ -31,6 +34,7 @@ export default {
         unsafe: false
       }
     }),
+    // compiler()
   ],
   external: []
 }
